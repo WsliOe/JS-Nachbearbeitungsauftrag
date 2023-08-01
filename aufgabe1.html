@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aufgabe 1</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      label {
+        margin-bottom: 10px;
+      }
+
+      input[type="text"] {
+        padding: 5px;
+        margin-bottom: 15px;
+        width: 40%;
+        text-align: center;
+      }
+
+      input[type="button"] {
+        padding: 8px 15px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      input[type="button"]:hover {
+        background-color: #45a049;
+      }
+
+      input[type="text"][name="ergebnis"] {
+        margin-top: 3rem;
+        width: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <label for="texteingabe">Texteingabe</label>
+      <input type="text" name="string" value="" size="10" />
+
+      <input
+        type="button"
+        name="change"
+        value="Umkehren"
+        onclick="ergebnis.value=reverseString(string.value)"
+      />
+      <input type="text" name="ergebnis" value="" size="20" />
+    </form>
+
+    <script>
+      function reverseString(str) {
+        return str.split("").reverse().join("");
+      }
+
+      const reversedString = reverseString("javascript");
+      console.log(reversedString);
+    </script>
+  </body>
+</html>

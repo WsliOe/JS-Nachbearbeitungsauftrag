@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aufgabe 2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      label {
+        margin-bottom: 10px;
+      }
+
+      input[type="text"] {
+        padding: 5px;
+        margin-bottom: 15px;
+        width: 100px;
+        text-align: center;
+      }
+
+      input[type="button"] {
+        padding: 8px 15px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      input[type="button"]:hover {
+        background-color: #45a049;
+      }
+
+      input[type="text"][name="ergebnis"] {
+        margin-top: 3rem;
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="schalt" action="">
+      <label for="Schaltjahr">Ist folgendes Jahr ein Schaltjahr?</label>
+      <input type="text" name="jahr" value="" size="10" />
+
+      <input
+        type="button"
+        name="prf"
+        value="Prüfe"
+        onclick="ergebnis.value=schaltjahr(jahr.value)"
+      />
+      <input type="text" name="ergebnis" value="" size="20" />
+    </form>
+
+    <script type="text/javascript">
+      function schaltjahr(jahr) {
+        var j = parseInt(jahr);
+        if (j % 4 == 0) {
+          if (j % 100 == 0) {
+            if (j % 400 == 0) {
+              return "ist Schaltjahr";
+            } else {
+              return "ist kein Schaltjahr";
+            }
+          } else {
+            return "Schaltjahr";
+          }
+        } else {
+          return "kein Schaltjahr";
+        }
+      }
+    </script>
+  </body>
+</html>

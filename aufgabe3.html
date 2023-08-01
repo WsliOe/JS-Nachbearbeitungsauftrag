@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aufgabe 3</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      margin-bottom: 15px;
+      width: 40%;
+      text-align: center;
+    }
+
+    input[type="button"] {
+      padding: 8px 15px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+      background-color: #45a049;
+    }
+
+    input[type="text"][name="ergebnis"] {
+      margin-top: 3rem;
+      width: 20%;
+    }
+  </style>
+
+  <body>
+    <form name="pangram" action="">
+      <label for="pangram">Ist folgender Satz ein Pangramm?</label>
+      <input type="text" name="sentence" value="" size="10" />
+
+      <input
+        type="button"
+        name="prf"
+        value="Prüfe"
+        onclick="ergebnis.value=isPangram(sentence.value)"
+      />
+      <input type="text" name="ergebnis" value="" size="20" />
+    </form>
+
+    <script>
+      function isPangram(sentence) {
+        let lowerCased = sentence.toLowerCase();
+        for (let char of "abcdefghijklmnopqrstuvwxyz") {
+          if (!lowerCased.includes(char)) {
+            return "ist kein Pangramm";
+          }
+        }
+        return "ist ein Pangramm";
+      }
+    </script>
+  </body>
+</html>
